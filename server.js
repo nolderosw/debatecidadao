@@ -1,4 +1,4 @@
-var https = require('https')
+var http = require('http')
 var url = require('url')
 var fs = require('fs')
 var path = require('path')
@@ -20,15 +20,14 @@ var contentTypes = {
 }
 
 
-https.createServer(function (pedido, resposta) {
+http.createServer(function (pedido, resposta) {
 	var caminho = url.parse(pedido.url).pathname;
 
 	if (caminho==='/') {
 		var ficheiro = path.join(__dirname, 'public', caminho, 'index.html');
    	} else {
-		var ficheiro = path.join(__dirname, 'public', caminho, 'index.html');
+		var ficheiro = path.join(__dirname, 'public', caminho);
    	}
-
 	console.log('path = '+caminho);
 
 	fs.readFile(ficheiro, function (erro, dados) {
@@ -44,5 +43,6 @@ https.createServer(function (pedido, resposta) {
 
 }).listen(port,function () {
   console.log('--- O servidor arrancou –--');
+  console.log('porta:'+port);
 });
 
