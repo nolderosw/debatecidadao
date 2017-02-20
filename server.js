@@ -41,7 +41,7 @@ http.createServer(function (pedido, resposta) {
   	}
 });
 
-}).listen(8080, '192.168.15.8', function () {
+}).listen(function () {
   console.log('--- O servidor arrancou –--');
 });
 
