@@ -1,5 +1,5 @@
-var http = require('http')
-var url = require('url')
+var https = require('https')
+var url = require('https://lelotestenode.herokuapp.com')
 var fs = require('fs')
 var path = require('path')
 
@@ -19,7 +19,7 @@ var contentTypes = {
 }
 
 
-http.createServer(function (pedido, resposta) {
+https.createServer(function (pedido, resposta) {
 	var caminho = url.parse(pedido.url).pathname;
 
 	if (caminho==='/') {
