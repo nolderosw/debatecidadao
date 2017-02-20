@@ -2,6 +2,7 @@ var https = require('https')
 var url = require('url')
 var fs = require('fs')
 var path = require('path')
+var port = process.env.PORT || 5000;
 
 var contentTypes = {
   'html' : 'text/html',
@@ -41,7 +42,7 @@ https.createServer(function (pedido, resposta) {
   	}
 });
 
-}).listen(80,'localhost',function () {
+}).listen(port,function () {
   console.log('--- O servidor arrancou –--');
 });
 
