@@ -25,7 +25,7 @@ https.createServer(function (pedido, resposta) {
 	if (caminho==='/') {
 		var ficheiro = path.join(__dirname, 'public', caminho, 'index.html');
    	} else {
-     	var ficheiro = path.join(__dirname, 'public', caminho);
+		var ficheiro = path.join(__dirname, 'public', caminho, 'index.html');
    	}
 
 	console.log('path = '+caminho);
